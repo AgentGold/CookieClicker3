@@ -62,7 +62,18 @@
 	</div>
 	
 	<script>
-	       var score = 0;
+	      var count = 0;
+if(localStorage.btncount){count=localStorage.btncount;} //check if you have already stored it; set count to it if yes
+    var button = document.getElementById("countButton");
+    var display = document.getElementById("displayCount");
+    display.innerHTML = count;
+    button.onclick = function(){
+        count++;
+        localStorage.btncount=count; // store the count
+        display.innerHTML = count;
+    }
+		
+		var score = 0;
 		   var clickingPower = 1;
 		   
 		   var cursorCost = 15;
