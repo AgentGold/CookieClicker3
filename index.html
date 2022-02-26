@@ -1,3 +1,10 @@
+<!--CREDITS
+-Entire Game made/code made by: BradleyJamesTipton
+
+-Suggestions and ideas: Tanner & Landyn Ross
+
+-Admin: Tanner and Landyn
+-->
 <HTML>
    <head>
 		<title>Cookie Clicker 3</title>
@@ -29,6 +36,14 @@
 		
 		.clickerContainer img:hover { transform: scale(1.10); }
 		.clickerContainer img:active { transform: scale(0.99); }
+			
+		.shopButton {
+		background-color: #b5b5b5;
+		transition: all .2s ease-in-out;
+		border-radius: 10px;
+		width: 100%;
+		margin 10px 0px 10px 0px;
+		}
 		</style>
    </head>
    
@@ -62,7 +77,7 @@
 	</div>
 	
 	<script>
-		   var score = 0;
+	       var score = 0;
 		   var clickingPower = 1;
 		   
 		   var cursorCost = 15;
@@ -106,15 +121,6 @@
 				document.getElementById("scorepersecond").innerHTML = scorePerSecond;
 		   }
 		   
-		function saveGame()	{
-			var gameSave {
-			score: score,
-			clickingPower: clickingPower,
-			cursorCost: cursorCost,
-			cursors: cursors
-			};
-		}
-		
 		   setInterval(function()	{
 				score = score + cursors;
 				score = score + grandmas * 5;
