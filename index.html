@@ -85,6 +85,7 @@
 	<div class="clickerContainer">
 	<img src="images/clickCookie.png" height="250px" onclick="addToScore(clickingPower)">
 	</div>
+		<button onclick="saveGame();">Save Game</button>
 	</center>
 	</div>
 	
@@ -158,6 +159,20 @@
 				document.getElementById("scorepersecond").innerHTML = scorePerSecond;
 		   }
 		   
+		   function saveGame() {
+			 var gameSave = {
+				score: score
+				clickingPower: clickingPower,
+				 cursorCost: cursorCost,
+				 cursors: cursors,
+				 grandmaCost: grandmaCost,
+				 grandmas: grandmas,
+				 farmCost: farmCost,
+				 farms: farms
+			 };
+			   localStorage.setItem("gameSave", JSON.stringify(gameSave));
+		   }
+		
 		   setInterval(function()	{
 				score = score + cursors;
 				score = score + grandmas * 5;
@@ -165,6 +180,10 @@
 				
 				document.title = score + " cookie - Cookie Clicker";
 		   }, 1000); // 1000ms = 1 second
+		
+		setInterval(funtion() {
+			    saveGame();
+		}, 30000); // 30000ms = 30 seconds
 	</script>
    </body>
 </HTML>
