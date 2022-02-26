@@ -1,10 +1,7 @@
 <!--CREDITS
 -Entire Game/code made by: BradleyJamesTipton
-
 -Suggestions and ideas by: Tanner & Landyn Ross
-
 -Admin/lvl3Dev: Tanner and Landyn
-DO NOT STEAL ANY CODE IF YOU WANT TO BORROW SOME CODE GO TO THE DISCORD
 -->
 <HTML>
    <head>
@@ -114,29 +111,16 @@ DO NOT STEAL ANY CODE IF YOU WANT TO BORROW SOME CODE GO TO THE DISCORD
 		<td id="amount"><span id="grandmas">0</span></td>
 		</tr>
 		</table>
-
-		<table class="shopButton" onclick="buyFarm()">
-		<tr>
-		<td id="image"><img src="images/farm.png" height="100px"></td>
-		<td id="nameAndCost">
-			<p>Farm</p>
-			<p><span id="farmcost">1,100</span> cookie</td>
-		</td>
-		<td id="amount"><span id="farms">0</span></td>
-		</tr>
-		</table>
-
 	</div>
 	
 	<script>
 	       var score = 0;
 		   var clickingPower = 1;
+		   
 		   var cursorCost = 15;
 		   var cursors = 0;
 		   var grandmaCost = 100;
 		   var grandmas = 0;
-		   var farmcost = 1,100;
-		   var farms = 0;
 		   
 		   function buyCursor()	{
 				if (score >= cursorCost) {
@@ -164,18 +148,6 @@ DO NOT STEAL ANY CODE IF YOU WANT TO BORROW SOME CODE GO TO THE DISCORD
 				}
 		   }
 		   
-		   function buyFarm()	{
-				if (score >= farmCost) {
-					score = score - farmCost;
-					farms = farms + 1;
-					farmCost = Math.round(farmCost * 1.15);
-					
-					  document.getElementById("score").innerHTML = score;
-					    document.getElementById("farmcost").innerHTML = farmCost;
-						  document.getElementById("farms").innerHTML = farms;
-						  updateScorePerSecond();
-				}
-		   }
 		   function addToScore(amount){
 		   score = score + amount;
 		     document.getElementById("score").innerHTML = score;
