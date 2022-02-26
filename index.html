@@ -6,194 +6,183 @@
 -Admin/lvl3Dev: Tanner and Landyn
 DO NOT STEAL ANY CODE IF YOU WANT TO BORROW SOME CODE GO TO THE DISCORD
 -->
-<HTML>
-   <head>
-		<title>Cookie Clicker 3</title>
-	
-		<style>
-		.sectionLeft {
-			float: left;
-			width: 80%;
-		}
-		
-		.sectionRight {
-			float: right;
-			width: 20%;
-		}
-		
-		.scoreContainer	{
-			background-color: rgb(246, 191, 188);
-			width: 50%;
-			padding: 10px;
-			border-radius: 10px;
-			font-size: 23px;
-			font-weight: bold;
-		}
-		
-		.clickerContainer img {
-			position: relative;
-			transition: all .2s ease-in-out;
-		}
-		
-		.clickerContainer img:hover { transform: scale(1.10); }
-		.clickerContainer img:active { transform: scale(0.99); }
-			
-		.shopButton {
-		background-color: #b5b5b5;
-		transition: all .2s ease-in-out;
-		border-radius: 10px;
-		width: 100%;
-		margin 10px 0px 10px 0px;
-		}
-			
-		.shopButton:hover {
-		background-color: #c7c7c7;
-		transition: all .2s ease-in-out;
-		}
-		
-		.shopButton #image {
-			width: 25%;
-		}
-			shopButton img {
-				height: 64px;
-				width: 64px;
-			}
-		.shopButton #nameAndCost p {
-			margin: 0px;
-			width: 60%;
-			}
-			
-		shopButton #nameAndCost p:first-of-type {
-			font-size: 24px;
-		}
-			
-		.shopButton #amount {
-			font-size: 48px;
-			color: #595959;
-			font-family: Grenze Gotisch;
-			width: 15%;
-		}
-		</style>
-   </head>
-   
-   <body>
-	
-	<div class="sectionLeft">
-	<center>
-	<div class="scoreContainer">
-	<span id="score">0</span> Cookie<br>
-	<span id="scorepersecond">0</span> Cookie per second
-	</div>
-	<br>
-	<div class="clickerContainer">
-	<img src="images/clickCookie.png" height="249px" onclick="addToScore(clickingPower)">
-	</div>
-	</center>
-	</div>
-	
-	
-	<div class="sectionRight">
-		<table class="shopButton" onclick="buyCursor()">
-		<tr>
-		<td id="image"><img src="images/cursor.png" height="100px"></td>
-		<td id="nameAndCost">
-			<p>Cursor</p>
-			<p><span id="cursorcost">15</span> cookie</td>
-		</td>
-		<td id="amount"><span id="cursors">0</span></td>
-		</tr>
-		</table>
-	         
-		<table class="shopButton" onclick="buyGrandma()">
-		<tr>
-		<td id="image"><img src="images/grandma.png" height="100px"></td>
-		<td id="nameAndCost">
-			<p>Grandma</p>
-			<p><span id="grandmacost">100</span> cookie</td>
-		</td>
-		<td id="amount"><span id="grandmas">0</span></td>
-		</tr>
-		</table>
-
-		<table class="shopButton" onclick="buyFarm()">
-		<tr>
-		<td id="image"><img src="images/farm.png" height="100px"></td>
-		<td id="nameAndCost">
-			<p>Farm</p>
-			<p><span id="farmcost">1100</span> cookie</td>
-		</td>
-		<td id="amount"><span id="farms">0</span></td>
-		</tr>
-		</table>
-
-	</div>
-	
-	<script>
-	       var score = 0;
-		   var clickingPower = 1;
-		   
-		   var cursorCost = 15;
-		   var cursors = 0;
-		   var grandmaCost = 100;
-		   var grandmas = 0;
-		   var farmcost = 1,100;
-		   var farms = 0;
-		   
-		   function buyCursor()	{
-				if (score >= cursorCost) {
-					score = score - cursorCost;
-					cursors = cursors + 1;
-					cursorCost = Math.round(cursorCost * 1.15);
-					
-					  document.getElementById("score").innerHTML = score;
-					    document.getElementById("cursorcost").innerHTML = cursorCost;
-						  document.getElementById("cursors").innerHTML = cursors;
-						  updateScorePerSecond();
-				}
-		   }
-		   
-		    function buyGrandma()	{
-				if (score >= grandmaCost) {
-					score = score - grandmaCost;
-					grandmas = grandmas + 1;
-					grandmaCost = Math.round(grandmaCost * 1.15);
-					
-					  document.getElementById("score").innerHTML = score;
-					    document.getElementById("grandmacost").innerHTML = grandmaCost;
-						  document.getElementById("grandmas").innerHTML = grandmas;
-						  updateScorePerSecond();
-				}
-		   }
-		   
-		   function buyFarm()	{
-				if (score >= farmCost) {
-					score = score - farmCost;
-					farms = farms + 1;
-					farmCost = Math.round(farmCost * 1.15);
-					
-					  document.getElementById("score").innerHTML = score;
-					    document.getElementById("farmcost").innerHTML = farmCost;
-						  document.getElementById("farms").innerHTML = farms;
-						  updateScorePerSecond();
-				}
-		   }
-		   function addToScore(amount){
-		   score = score + amount;
-		     document.getElementById("score").innerHTML = score;
-		   }
-		   
-		   function updateScorePerSecond()	{
-				scorePerSecond = cursors + grandmas * 5;
-				document.getElementById("scorepersecond").innerHTML = scorePerSecond;
-		   }
-		   
-		   setInterval(function()	{
-				score = score + cursors;
-				score = score + grandmas * 5;
-				document.getElementById("score").innerHTML = score;
-				
-				document.title = score + " cookie - Cookie Clicker";
-		   }, 1000); // 1000ms = 1 second
-	</script>
-   </body>
-</HTML>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Clicker 3</title>
+  <style>
+                .sectionLeft {
+                        float: left;
+                        width: 80%;
+                }
+                
+                .sectionRight {
+                        float: right;
+                        width: 20%;
+                }
+                
+                .scoreContainer {
+                        background-color: rgb(246, 191, 188);
+                        width: 50%;
+                        padding: 10px;
+                        border-radius: 10px;
+                        font-size: 23px;
+                        font-weight: bold;
+                }
+                
+                .clickerContainer img {
+                        position: relative;
+                        transition: all .2s ease-in-out;
+                }
+                
+                .clickerContainer img:hover { transform: scale(1.10); }
+                .clickerContainer img:active { transform: scale(0.99); }
+                        
+                .shopButton {
+                background-color: #b5b5b5;
+                transition: all .2s ease-in-out;
+                border-radius: 10px;
+                width: 100%;
+                margin 10px 0px 10px 0px;
+                }
+                        
+                .shopButton:hover {
+                background-color: #c7c7c7;
+                transition: all .2s ease-in-out;
+                }
+                
+                .shopButton #image {
+                        width: 25%;
+                }
+                        shopButton img {
+                                height: 64px;
+                                width: 64px;
+                        }
+                .shopButton #nameAndCost p {
+                        margin: 0px;
+                        width: 60%;
+                        }
+                        
+                shopButton #nameAndCost p:first-of-type {
+                        font-size: 24px;
+                }
+                        
+                .shopButton #amount {
+                        font-size: 48px;
+                        color: #595959;
+                        font-family: Grenze Gotisch;
+                        width: 15%;
+                }
+  </style>
+</head>
+<body>
+  <div class="sectionLeft">
+    <center>
+      <div class="scoreContainer">
+        <span id="score">0</span> Cookie<br>
+        <span id="scorepersecond">0</span> Cookie per second
+      </div><br>
+      <div class="clickerContainer"><img src="images/clickCookie.png" height="250px" onclick="addToScore(clickingPower)" alt="clickCookie"></div>
+    </center>
+  </div>
+  <div class="sectionRight">
+    <table class="shopButton" onclick="buyCursor()">
+      <tr>
+        <td id="image"><img src="images/cursor.png" height="100px" alt="cursor"></td>
+        <td id="nameAndCost">
+          <p>Cursor</p>
+          <p><span id="cursorcost">15</span> cookie</p>
+        </td>
+        <td id="amount"><span id="cursors">0</span></td>
+      </tr>
+    </table>
+    <table class="shopButton" onclick="buyGrandma()">
+      <tr>
+        <td id="image"><img src="images/grandma.png" height="100px" alt="grandma"></td>
+        <td id="nameAndCost">
+          <p>Grandma</p>
+          <p><span id="grandmacost">100</span> cookie</p>
+        </td>
+        <td id="amount"><span id="grandmas">0</span></td>
+      </tr>
+    </table>
+    <table class="shopButton" onclick="buyFarm()">
+      <tr>
+        <td id="image"><img src="images/farm.png" height="100px" alt="farm"></td>
+        <td id="nameAndCost">
+          <p>Farm</p>
+          <p><span id="farmcost">1,100</span> cookie</p>
+        </td>
+        <td id="amount"><span id="farms">0</span></td>
+      </tr>
+    </table>
+  </div>
+  <script>
+               var score = 0;
+                   var clickingPower = 1;
+                   
+                   var cursorCost = 15;
+                   var cursors = 0;
+                   var grandmaCost = 100;
+                   var grandmas = 0;
+                   var farmcost = 1,100;
+                   var farms = 0;
+                   
+                   function buyCursor() {
+                                if (score >= cursorCost) {
+                                        score = score - cursorCost;
+                                        cursors = cursors + 1;
+                                        cursorCost = Math.round(cursorCost * 1.15);
+                                        
+                                          document.getElementById("score").innerHTML = score;
+                                            document.getElementById("cursorcost").innerHTML = cursorCost;
+                                                  document.getElementById("cursors").innerHTML = cursors;
+                                                  updateScorePerSecond();
+                                }
+                   }
+                   
+                    function buyGrandma()       {
+                                if (score >= grandmaCost) {
+                                        score = score - grandmaCost;
+                                        grandmas = grandmas + 1;
+                                        grandmaCost = Math.round(grandmaCost * 1.15);
+                                        
+                                          document.getElementById("score").innerHTML = score;
+                                            document.getElementById("grandmacost").innerHTML = grandmaCost;
+                                                  document.getElementById("grandmas").innerHTML = grandmas;
+                                                  updateScorePerSecond();
+                                }
+                   }
+                   
+                   function buyFarm()   {
+                                if (score >= farmCost) {
+                                        score = score - farmCost;
+                                        farms = farms + 1;
+                                        farmCost = Math.round(farmCost * 1.15);
+                                        
+                                          document.getElementById("score").innerHTML = score;
+                                            document.getElementById("farmcost").innerHTML = farmCost;
+                                                  document.getElementById("farms").innerHTML = farms;
+                                                  updateScorePerSecond();
+                                }
+                   }
+                   function addToScore(amount){
+                   score = score + amount;
+                     document.getElementById("score").innerHTML = score;
+                   }
+                   
+                   function updateScorePerSecond()      {
+                                scorePerSecond = cursors + grandmas * 5;
+                                document.getElementById("scorepersecond").innerHTML = scorePerSecond;
+                   }
+                   
+                   setInterval(function()       {
+                                score = score + cursors;
+                                score = score + grandmas * 5;
+                                document.getElementById("score").innerHTML = score;
+                                
+                                document.title = score + " cookie - Cookie Clicker";
+                   }, 1000); // 1000ms = 1 second
+  </script>
+</body>
+</html>
