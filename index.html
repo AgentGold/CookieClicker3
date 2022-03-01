@@ -88,7 +88,6 @@ Link to Agent Gold: sites.google.com/view/agentgold
 	<div class="clickerContainer">
 	<img src="images/clickCookie.png" height="250px" onclick="addToScore(clickingPower)">
 	</div>
-		<button onclick="saveGame();">Save Game</button>
 	</center>
 	</div>
 	
@@ -162,12 +161,8 @@ Link to Agent Gold: sites.google.com/view/agentgold
 				document.getElementById("scorepersecond").innerHTML = scorePerSecond;
 		   }
 		   
-		   function saveGame() {
-			 var gameSave = {
-				score: score,
-
 			 };
-			  localStorage.setItem("gameSave", JSON.stringify(gameSave));
+			
 		   }
 		
 		   setInterval(function()	{
@@ -177,10 +172,6 @@ Link to Agent Gold: sites.google.com/view/agentgold
 				
 				document.title = score + " cookie - Cookie Clicker";
 		   }, 1000); // 1000ms = 1 second
-		
-		setInterval(funtion() {
-			    saveGame();
-		}, 30000); // 30000ms = 30 seconds
 	</script>
    </body>
 </HTML>
